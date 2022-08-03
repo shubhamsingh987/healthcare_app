@@ -2,7 +2,7 @@
 # yoga and disease dictonary
 
 yoga_dict={
-"asthama":"Kapalabhati",
+"asthama":["Kapalabhati"],
 "arthritis":["Trikonasana","Vrikshaasana","Gomukhasana"],
 "anxiety":["veerbhadrasana","veerbhadrasana II"],
 "spondylitis":["Tadasana(Mountain Pose)"],
@@ -28,7 +28,12 @@ customer_dict={
 #plan descrtion
 
 plans_dict={
-    "Plan A":["Asthasma"],
-    "Plan B":["Arthritis"]
+    "Plan A":["anxiety"],
+    "Plan B":["sciatica"],
+    "Plan C":["spondylitis"]
 }
 
+def get_plan(val):
+    for key, value in plans_dict.items():
+         if val in value:
+             return key
