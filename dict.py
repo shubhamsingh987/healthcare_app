@@ -1,10 +1,11 @@
 
+# sample data 
 # yoga and disease dictonary
 
 yoga_dict={
 "asthama":["Kapalabhati"],
 "arthritis":["Trikonasana","Vrikshaasana","Gomukhasana"],
-"anxiety":["veerbhadrasana","veerbhadrasana II"],
+"anxiety":["veerbhadrasana"],
 "spondylitis":["Tadasana(Mountain Pose)"],
 "sciatica":["Vrikshasana(Tree Pose)"],
 "Back Pain":["Adho Mukha Svanasana(Dog Pose)"],
@@ -32,6 +33,22 @@ plans_dict={
     "Plan B":["sciatica"],
     "Plan C":["spondylitis"]
 }
+
+id_to_name={
+    "ID: P1234":"Greg",
+    "ID: P9876":"Peter",
+    "ID: P4567":"Griffin"
+}
+
+plan_cost={
+    "Plan A":"10$",
+    "Plan B":"12$",
+    "Plan C":"14$"
+
+}
+
+
+
 
 def get_plan(val):
     for key, value in plans_dict.items():
