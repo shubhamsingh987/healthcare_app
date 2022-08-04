@@ -7,7 +7,6 @@ import dict
 # import pyttsx3
 # import dataframe_image as dfi
 # import pandas as pd
-
 # engine = pyttsx3.init()
 # engine.setProperty('rate', 165)
 # df = pd.DataFrame(dict.plans_dict)
@@ -49,7 +48,10 @@ for filename in files:
                     image = cv2.putText(image, res, org, font, fontScale, color, thickness, cv2.LINE_AA)
                     org = (200, 1500)
                     p=dict.customer_dict.get(p_id)
-                    if d in dict.plans_dict.get(p): res='We want to inform you that you are already covered under '+p
+                    if d in dict.plans_dict.get(p):
+                        res='We want to inform you that you are already covered for your diagnosis under '+p
+                        image = cv2.putText(image, res, org, font, fontScale, color, thickness, cv2.LINE_AA)
+                        speak+=res
                     else:
                         res='We want to inform you that your current plan does not cover your current diagnosis '
                         image = cv2.putText(image, res, org, font, fontScale, color, thickness, cv2.LINE_AA)

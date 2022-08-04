@@ -41,9 +41,9 @@ id_to_name={
 }
 
 plan_cost={
-    "Plan A":"10$",
-    "Plan B":"12$",
-    "Plan C":"14$"
+    "Plan A":"10 $",
+    "Plan B":"12 $",
+    "Plan C":"14 $"
 
 }
 
