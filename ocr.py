@@ -1,9 +1,8 @@
-
 import cv2 , os 
 import pytesseract
 from PIL import Image
 import spacy
-import dict
+import dict , numpy
 # import pyttsx3
 # import dataframe_image as dfi
 # import pandas as pd
@@ -12,13 +11,12 @@ import dict
 # df = pd.DataFrame(dict.plans_dict)
 # df_styled = df.style.background_gradient()
 # dfi.export(df.style.hide(axis='index'), "./img/plans.png")
-
 img2 = cv2.imread("./img/plans.png")
 nlp = spacy.load("en_ner_bc5cdr_md") 
 files=os.listdir("./img/")
 for filename in files:
     filename="./img/"+filename
-    if filename.endswith(".jpg"): 
+    if filename.endswith("diag.jpg"): 
         image=cv2.imread(filename)
         gray=cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         cv2.threshold(gray, 0,255,cv2.THRESH_BINARY| cv2.THRESH_OTSU)[1]
@@ -64,8 +62,21 @@ for filename in files:
                     # image = cv2.putText(image, 'PLAN LIST', org, font, fontScale, color, thickness, cv2.LINE_AA)
         image = cv2.resize(image, (1000, 1366),interpolation = cv2.INTER_NEAREST)
         # image[1000:1000+54,100:100+200,:] = img2[0:54,0:200,:]
+
+        color_coverted = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        img1 = Image.fromarray(color_coverted).convert("RGBA")
+
+        img2 = Image.open("./img/"+y[0]+".png").convert("RGBA")
+        img2=img2.resize((200,200))
+        img1.paste(img2, (350,1050), mask = img2)
+
+        # img1.show()
+
+        image = cv2.cvtColor(numpy.array(img1), cv2.COLOR_RGB2BGR)
+
         cv2.imshow("Prescrption",image)
-        cv2.waitKey(delay=100)
-        # engine.say(speak)
-        # engine.runAndWait()
-        cv2.waitKey(delay=5000)
+        cv2.waitKey(delay=10000)
+        # cv2.waitKey(delay=100)
+        # # engine.say(speak)
+        # # engine.runAndWait()
+        

@@ -5,9 +5,9 @@
 yoga_dict={
 "asthama":["Kapalabhati"],
 "arthritis":["Trikonasana","Vrikshaasana","Gomukhasana"],
-"anxiety":["veerbhadrasana"],
-"spondylitis":["Tadasana(Mountain Pose)"],
-"sciatica":["Vrikshasana(Tree Pose)"],
+"anxiety":["Veerbhadrasana"],
+"spondylitis":["Tadasana (Mountain Pose)"],
+"sciatica":["Vrikshasana (Tree Pose)"],
 "Back Pain":["Adho Mukha Svanasana(Dog Pose)"],
 "Weak Quadriceps":["Utkatasana(Chair Pose)"],
 "Type 2 diabetes":["Supta Matsyendrasana"],
